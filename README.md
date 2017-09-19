@@ -36,3 +36,23 @@ save_conexao(name = "default",
 	username = "<username>",
 	password = "<password>")
 ```
+
+Para verificar as conexões salvas e seus respectivos dados:
+
+```R
+# Exibe o nome das conexões armazenadas
+listar_conexoes()
+
+# Consulta os dados da conexão pelo seu nome
+get_conexao("default")
+```
+
+
+
+## Consumindo dados
+
+Basta invocar a função **query()** e informar o código sql e opcionalmente o nome (apelido) da conexão.
+
+```R
+query("select count(*) total from atendime")
+```
