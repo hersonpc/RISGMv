@@ -2,15 +2,18 @@
 % Please edit documentation in R/listar_conexoes.R
 \name{listar_conexoes}
 \alias{listar_conexoes}
-\title{Lista o alias das conexoes armazenadas localmente}
+\title{Lista o Alias das conexoes armazenadas localmente}
 \usage{
-listar_conexoes(name = "default")
+listar_conexoes()
 }
 \value{
-Retorna relação das conexoes armazenadas localmente
+Retorna relação dos nomes das conexoes armazenadas localmente
 }
 \description{
-Lista o alias das conexoes armazenadas localmente
+Lista o Alias das conexoes armazenadas localmente
+}
+\examples{
+listar_conexoes(name = "default")
 }
 \author{
 Herson Melo <hersonpc@gmail.com>

@@ -1,8 +1,9 @@
-#' Lista o alias das conexoes armazenadas localmente
+#' Lista o Alias das conexoes armazenadas localmente
 #'
 #' @author Herson Melo <hersonpc@gmail.com>
-#' @return Retorna relação das conexoes armazenadas localmente
-listar_conexoes <- function(name = "default") {
+#' @return Retorna relação dos nomes das conexoes armazenadas localmente
+#' @examples listar_conexoes(name = "default")
+listar_conexoes <- function() {
 
 	sqlite.filename <- file.path(Sys.getenv("HOME"), ".r", "risgmv.sqlite")
 	setup_ambiente_oracle()

@@ -6,11 +6,11 @@
 #' @param conexao_name Alias para acesso a conexao armazenada
 #' @return Query executada no banco de dados
 #' @export
-query <- function(sql = "", conexao_name = "default") {
+query <- function(sql, conexao_name = "default") {
 
 	setup_ambiente_oracle()
 
-	conexao <- get_conexao(conexao_name)
+	conexao <- obter_conexao(conexao_name)
 	
 	output <- NULL
 	tryCatch(

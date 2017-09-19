@@ -22,17 +22,21 @@ install_github("hersonpc/RISGMv")
 
 Substitua os seguintes dados no script abaixo:
 
+* **\<name\>**	Alias para referencia futura aos dados
 * **\<ip\>**	IP do servidor de banco de dados
-* **\<porta\>**	Porta de uso do serviço de banco de dados
 * **\<database\>** Nome da instancia do banco de dados
 * **\<username\>** Nome do usuário para acesso ao banco de dados
 * **\<password\>** Senha de acesso
 
 
 ```R
+# Carregar a biblioteca
 library("RISGMv")
-save_conexao(name = "default",
-	stringConexao = "jdbc:oracle:thin:@<ip>:<porta>:<database>",
+
+# Salvar os dados desejados
+salvar_conexao(name = "default",
+	ip = "<ip>",
+	database = "<database>",
 	username = "<username>",
 	password = "<password>")
 ```
@@ -40,11 +44,14 @@ save_conexao(name = "default",
 Para verificar as conexões salvas e seus respectivos dados:
 
 ```R
+# Carregar a biblioteca
+library("RISGMv")
+
 # Exibe o nome das conexões armazenadas
 listar_conexoes()
 
 # Consulta os dados da conexão pelo seu nome
-get_conexao("default")
+obter_conexao("default")
 ```
 
 

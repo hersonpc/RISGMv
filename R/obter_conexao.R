@@ -1,9 +1,10 @@
-#' Consulta o respositorio local e retorna a string de conexao armazenada
+#' Obtem os dados da conexao armazenada localmente
 #'
 #' @author Herson Melo <hersonpc@gmail.com>
-#' @param name Nome da conexao armazenada
+#' @param name Nome (Alias) da conexao armazenada
 #' @return Dados de conexao para acesso ao banco de dados
-get_conexao <- function(name = "default") {
+#' @examples obter_conexao(name = "default")
+obter_conexao <- function(name = "default") {
 
 	sqlite.filename <- file.path(Sys.getenv("HOME"), ".r", "risgmv.sqlite")
 	setup_ambiente_oracle()
