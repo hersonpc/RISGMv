@@ -6,6 +6,9 @@
 #' @return Conexao ao banco
 #' @export
 mv_exec <- function(query) {
-  print("Hello, world!")
+  db_ip <- readline("Qual IP do banco de dados? ")
+  db_name <- readline("Qual nome da conexão com o DB? ")
+
+  print(db_ip)
   return ("Hello, world!")
 }
