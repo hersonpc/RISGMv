@@ -3,7 +3,7 @@ Type: Package
 Title: HDT MV Oracle - Acesso aos dados do banco de dados
 Version: 0.0.1
 Author: Herson Melo <hersonpc@gmail.com>
-Maintainer: Hereson Melo <hersonpc@gmail.com>
+Maintainer: Herson Melo <hersonpc@gmail.com>
 Description: Pacote para viabilizar consumo de dados dos bancos Oracle
 License: MIT
 Encoding: UTF-8
