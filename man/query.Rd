@@ -4,7 +4,7 @@
 \alias{query}
 \title{Executar Query no banco de dados MV}
 \usage{
-query(sql = "", conexao_name = "default")
+query(sql, conexao_name = "default")
 }
 \arguments{
 \item{sql}{Query SQL a ser executada ex: 'select * from tabela'}
