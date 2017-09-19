@@ -10,5 +10,5 @@ mv_exec <- function(query) {
   db_name <- readline("Qual nome da conexão com o DB? ")
 
   print(db_ip)
-  return ("Hello, world!")
+  return (query)
 }
