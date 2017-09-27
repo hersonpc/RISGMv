@@ -9,11 +9,11 @@ salvar_conexao(name = "default", ip, database, username, password)
 \arguments{
 \item{name}{Nome da conexao salva (ex: 'default')}
 
-\item{ip}{Endereço do serviçor de banco de dados}
+\item{ip}{EndereÃ§o do serviÃ§or de banco de dados}
 
-\item{database}{Nome da instância do banco de dados}
+\item{database}{Nome da instÃ¢ncia do banco de dados}
 
-\item{username}{Nome do usuário do banco de dados}
+\item{username}{Nome do usuÃ¡rio do banco de dados}
 
 \item{password}{Senha de acesso ao banco de dados}
 }
@@ -24,10 +24,10 @@ TRUE ou FALSE, a depender do sucesso do armazenamento dos dados no dispositivo l
 Armazenada/Atualiza dados de uma conexao de banco de dados
 }
 \examples{
-salvar_conexao(name = "default", 
-			ip = "192.168.0.1", 
-			database = "producao", 
-			username = "dbamv", 
+salvar_conexao(name = "default",
+			ip = "192.168.0.1",
+			database = "producao",
+			username = "dbamv",
 			password = "123456")
 }
 \author{

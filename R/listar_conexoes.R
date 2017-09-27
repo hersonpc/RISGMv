@@ -12,19 +12,19 @@ listar_conexoes <- function() {
 		warning("Nenhum dado consta armazenado neste dispositivo")
 		return (NULL)
 	}
-	
+
 	output <- NULL
 	tryCatch(
 		{
-			con = dbConnect(RSQLite::SQLite(), dbname = sqlite.filename)
-			output <- dbGetQuery(con, 'SELECT name FROM conexoes')
+			con = DBI::dbConnect(RSQLite::SQLite(), dbname = sqlite.filename)
+			output <- DBI::dbGetQuery(con, 'SELECT name FROM conexoes')
 		},
 		error = function(cond) {
-			warning("Erro ao consultar arquivo de dados, reconstrua-o pelo comando 'save_conexao()'")
+			warning("Erro ao consultar arquivo de dados, reconstrua-o pelo comando 'salvar_conexao()'")
 			# warning(cond)
 		}
 	)
-	dbDisconnect(con)
-	
+	DBI::dbDisconnect(con)
+
 	return (output)
 }

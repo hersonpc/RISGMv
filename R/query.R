@@ -11,23 +11,23 @@ query <- function(sql, conexao_name = "default") {
 	setup_ambiente_oracle()
 
 	conexao <- obter_conexao(conexao_name)
-	
+
 	output <- NULL
 	tryCatch(
 		{
 			ojdbc6.filename <- file.path(Sys.getenv("HOME"), ".r", "lib", "ojdbc6.jar")
 			drvOracle <- RJDBC::JDBC(driverClass = "oracle.jdbc.OracleDriver", classPath = ojdbc6.filename)
-			con <- dbConnect(drvOracle, conexao$stringConexao, as.character(conexao$username), as.character(conexao$password))
-			res = dbSendQuery(con, sql)
-			output = fetch(res, n = -1)
-			dbClearResult(res)
-			
-			dbDisconnect(con)
+			con <- DBI::dbConnect(drvOracle, conexao$stringConexao, as.character(conexao$username), as.character(conexao$password))
+			res = DBI::dbSendQuery(con, sql)
+			output = DBI::fetch(res, n = -1)
+			DBI::dbClearResult(res)
+
+			DBI::dbDisconnect(con)
 		},
 		error = function(cond) {
 			warning(cond)
 		}
 	)
-	
+
 	return (output)
 }

@@ -13,19 +13,19 @@ obter_conexao <- function(name = "default") {
 		warning("Nenhum dado consta armazenado neste dispositivo")
 		return (NULL)
 	}
-	
+
 	stringConexao <- NULL
 	tryCatch(
 		{
-			con = dbConnect(RSQLite::SQLite(), dbname = sqlite.filename)
-			stringConexao <- dbGetQuery(con, paste0('SELECT * FROM conexoes where name like "', tolower(name), '" '))
+			con = DBI::dbConnect(RSQLite::SQLite(), dbname = sqlite.filename)
+			stringConexao <- DBI::dbGetQuery(con, paste0('SELECT * FROM conexoes where name like "', tolower(name), '" '))
 		},
 		error = function(cond) {
-			warning("Erro ao consultar arquivo de dados, reconstrua-o pelo comando 'save_conexao()'")
+			warning("Erro ao consultar arquivo de dados, reconstrua-o pelo comando 'salvar_conexao()'")
 			# warning(cond)
 		}
 	)
-	dbDisconnect(con)
-	
+	DBI::dbDisconnect(con)
+
 	return (stringConexao)
 }
