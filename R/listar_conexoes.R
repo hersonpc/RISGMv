@@ -17,7 +17,7 @@ listar_conexoes <- function() {
 	tryCatch(
 		{
 			con = DBI::dbConnect(RSQLite::SQLite(), dbname = sqlite.filename)
-			output <- DBI::dbGetQuery(con, 'SELECT name FROM conexoes')
+			output <- DBI::dbGetQuery(con, 'SELECT name, stringConexao FROM conexoes')
 		},
 		error = function(cond) {
 			warning("Erro ao consultar arquivo de dados, reconstrua-o pelo comando 'salvar_conexao()'")

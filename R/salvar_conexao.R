@@ -18,6 +18,10 @@ salvar_conexao <- function(name = "default", ip, database, username, password) {
 	sqlite.filename <- file.path(Sys.getenv("HOME"), ".r", "risgmv.sqlite")
 	setup_ambiente_oracle()
 
+	string_conexao_oracle <- function(ip, database, porta = 1521) {
+	  return (paste0("jdbc:oracle:thin:@", ip, ":", porta, ":", database))
+	}
+
 	stringConexao <- string_conexao_oracle(ip = ip, database = database)
 
 	tryCatch(
