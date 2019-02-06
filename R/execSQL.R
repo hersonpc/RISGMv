@@ -5,7 +5,7 @@
 #' @param connection_alias Alias para acesso a conexao armazenada
 #' @return TRUE if executed without errors
 #' @export
-query <- function(sql, connection_alias = "default") {
+execSQL <- function(sql, connection_alias = "default") {
 
 	setup_ambiente_oracle()
 
@@ -18,7 +18,7 @@ query <- function(sql, connection_alias = "default") {
 			drvOracle <- RJDBC::JDBC(driverClass = "oracle.jdbc.OracleDriver", classPath = ojdbc6.filename)
 			con <- DBI::dbConnect(drvOracle, conexao$stringConexao, as.character(conexao$username), as.character(conexao$password))
 
-			DBI::dbExecute(con, sql)
+			RJDBC::dbSendUpdate(conn = con, statement = sql)
 			output <- TRUE
 
 			DBI::dbDisconnect(con)

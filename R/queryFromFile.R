@@ -27,5 +27,5 @@ queryFromFile <- function(fileName, replacement = NULL, connection_alias = "defa
 	  }
 	}
 
-	return (query(sql = sql_query, conexao_name = connection_alias))
+	return (query(sql = sql_query, connection_alias = connection_alias))
 }

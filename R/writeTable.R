@@ -6,7 +6,8 @@
 #' @param conexao_name Alias name for connection stored in local machine
 #' @return TRUE or FALSE if table has created
 #' @export
-write <- function(df, table_name, delete_table_if_exists = FALSE, conexao_name = "default") {
+writeTable <- function(df, table_name, delete_table_if_exists = FALSE,
+                       append = FALSE, overwrite = FALSE, row.names = FALSE, conexao_name = "default") {
 
   # Check table name
   table_name = stringr::str_trim(table_name)
@@ -27,11 +28,22 @@ write <- function(df, table_name, delete_table_if_exists = FALSE, conexao_name =
 			drvOracle <- RJDBC::JDBC(driverClass = "oracle.jdbc.OracleDriver", classPath = ojdbc6.filename)
 			con <- DBI::dbConnect(drvOracle, conexao$stringConexao, as.character(conexao$username), as.character(conexao$password))
 
-			if(delete_table_if_exists & DBI::dbExistsTable(con, table_name))
-			  DBI::dbRemoveTable(con, table_name)
+			if(delete_table_if_exists) {
+			  message("\t- Delete if exists...")
+			  if(DBI::dbExistsTable(con, table_name)) {
+			    message("\t- Removing existis table")
+			    DBI::dbRemoveTable(con, table_name)
+			  } else {
+			    message("\t- not exists...")
+			  }
+			} else {
+			  message("\t- not delete_table_if_exists")
+			}
 
 			# Write the data frame to the database
-			dbWriteTable(con, name = table_name, value = df, row.names = FALSE)
+			DBI::dbWriteTable(conn = con, name = table_name, value = df,
+			                  append = append, overwrite = overwrite, row.names = row.names)
+			DBI::dbCommit(con)
 			DBI::dbDisconnect(con)
 			success <- TRUE
 		},
