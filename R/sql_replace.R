@@ -1,25 +1,29 @@
 #' Get Script Query stored
 #'
 #' @author Herson Melo <hersonpc@gmail.com>
-#' @param script Script name
+#' @param text Original text
 #' @param replacement Array with replecements c('find this' = 'replace with this')
-#' @param conexao_name Alias para acesso a conexao armazenada
-#' @return Query Executed
+#' @return Replaced text
 #' @export
-execStoredScript <- function(script, replacement = NULL, connection_alias = "default") {
+sqlReplace <- function(text, replacement = NULL) {
+	if(exists("replacement")) {
+	  if(!is.null(replacement)) {
+	    message(paste0("\tReplacing sql strings (#", length(replacement), "): ", names(replacement)))
+	    for (i in 1:length(replacement)) {
+	      var_from = names(replacement)[i]
+	      var_to   = replacement[i]
 
-	if(stringr::str_trim(script) == "")
-		stop("ERROR - Script name not found")
+	      text <-
+	         base::gsub(
+	              var_from,
+	              var_to,
+	              text,
+	              ignore.case = TRUE)
+	    }
+	  }
+	}
 
-  query_script <- paste0(sql = "select * from HERSON_SCRIPTS where script_name like '", script, "'")
-	sql_query <- query(query_script, connection_alias = connection_alias)$SCRIPT
-
-	if(stringr::str_trim(sql_query) == "")
-	  stop("ERROR - Script content not found or invalid")
-
-	sql_query <- sqlReplace(sql_query, replacement)
-
-	return (query(sql = sql_query, connection_alias = connection_alias))
+	return (text)
 }
 
 

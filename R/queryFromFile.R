@@ -12,20 +12,7 @@ queryFromFile <- function(fileName, replacement = NULL, connection_alias = "defa
 
 	sql_query <- ler_arquivo(fileName)
 
-	if(exists("replacement")) {
-	  if(!is.null(replacement)) {
-	    message(paste0("\tReplacing sql strings (#", length(replacement), "): ", names(replacement)))
-	    for (i in 1:length(replacement)) {
-	      var_from = names(replacement)[i]
-	      var_to   = replacement[i]
-
-	      sql_query <- gsub(var_from,
-	                      var_to,
-	                      sql_query,
-	                      ignore.case = TRUE)
-	    }
-	  }
-	}
+	sql_query <- sqlReplace(sql_query, replacement)
 
 	return (query(sql = sql_query, connection_alias = connection_alias))
 }

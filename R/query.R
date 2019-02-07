@@ -3,10 +3,13 @@
 #' Exibe a mensagem de ola mundo
 #' @author Herson Melo <hersonpc@gmail.com>
 #' @param sql Query SQL a ser executada ex: 'select * from tabela'
+#' @param replacement Array with replecements c('find this' = 'replace with this')
 #' @param connection_alias Alias para acesso a conexao armazenada
 #' @return Query executada no banco de dados
 #' @export
-query <- function(sql, connection_alias = "default") {
+query <- function(sql, replacement = NULL, connection_alias = "default") {
+
+  sql <- sqlReplace(sql, replacement)
 
 	setup_ambiente_oracle()
 
