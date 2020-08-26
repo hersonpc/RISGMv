@@ -75,12 +75,18 @@ result <-
     connection_alias = "banco-indicadores")
 ```
 
-## Constantes
+## Funções e Constantes Úteis
 
-Para auxiliar na criação das analises o pacote contem algunas constantes úteis para formatação dos dados.
+Para auxiliar na criação das analises o pacote contem algunas funções e constantes úteis para formatação dos dados.
 
 ```R
-constantes$meses$curtos
+# Trazudir numeral do mês para o texto em pt-br
+isgr_utils$traduzMesCurto(8)
+isgr_utils$traduzMesCurto(c(2,8,12,1,2))
 
-constantes$meses$longos
+isgr_utils$traduzMesLongo(11)
+isgr_utils$traduzMesLongo(c(11,9,2,7,10))
+
+# Remover acentos
+isgr_utils$removeAcentos("Função")
 ```
