@@ -12,7 +12,7 @@ Promovendo uma maneira local de armazenamento dos dados de conexão e permitindo
 install.packages("devtools")
 
 # Instalar via github
-devtools::install_github("hersonpc/RISGMv")
+devtools::install_github("hersonpc/isgr")
 ```
 
 

@@ -15,11 +15,11 @@ Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.1)
 Imports: 
     dplyr (>= 0.8.5),
-    DBI (>= 1.1.0),
-    RSQLite (>= 2.2.0),
-    rJava (>= 0.9-12),
-    RJDBC (>= 0.2-8),
-    RMySQL (>= 0.10.20),
+    DBI (>= 1.1),
+    RSQLite (>= 2.2),
+    rJava (>= 0.9),
+    RJDBC (>= 0.2),
+    RMySQL (>= 0.10),
     stringr,
     utils
 
