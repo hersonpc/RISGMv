@@ -19,5 +19,5 @@ Obtem os dados da conexao armazenada localmente
 obter_conexao(name = "default")
 }
 \author{
-Herson Melo <hersonpc@gmail.com>
+Herson Melo
 }

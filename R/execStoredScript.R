@@ -1,9 +1,9 @@
 #' Get Script Query stored
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @param script Script name
 #' @param replacement Array with replecements c('find this' = 'replace with this')
-#' @param conexao_name Alias para acesso a conexao armazenada
+#' @param connection_alias Alias para acesso a conexao armazenada
 #' @return Query Executed
 #' @export
 execStoredScript <- function(script, replacement = NULL, connection_alias = "default") {

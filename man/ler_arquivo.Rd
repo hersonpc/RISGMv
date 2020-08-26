@@ -2,7 +2,7 @@
 % Please edit documentation in R/ler_arquivo.R
 \name{ler_arquivo}
 \alias{ler_arquivo}
-\title{Le um arquivo e obtem seu conteudo}
+\title{Ler um arquivo e obtem seu conteudo}
 \usage{
 ler_arquivo(filename)
 }
@@ -13,8 +13,8 @@ ler_arquivo(filename)
 Conteudo do arquivo
 }
 \description{
-Le um arquivo e obtem seu conteudo
+Ler um arquivo e obtem seu conteudo
 }
 \author{
-Herson Melo <hersonpc@gmail.com>
+Herson Melo
 }

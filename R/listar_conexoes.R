@@ -1,8 +1,8 @@
-#' Lista o Alias das conexoes armazenadas localmente
+#' Lista o alias das conexoes armazenadas localmente
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @return Retorna relação dos nomes das conexoes armazenadas localmente
-#' @examples listar_conexoes(name = "default")
+#' @examples listar_conexoes()
 listar_conexoes <- function() {
 
 	sqlite.filename <- file.path(Sys.getenv("HOME"), ".r", "risgmv.sqlite")
@@ -26,5 +26,5 @@ listar_conexoes <- function() {
 	)
 	DBI::dbDisconnect(con)
 
-	return (output)
+	return(output)
 }

@@ -1,6 +1,6 @@
 #' Obtem os dados da conexao armazenada localmente
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @param name Nome (Alias) da conexao armazenada
 #' @return Dados de conexao para acesso ao banco de dados
 #' @examples obter_conexao(name = "default")

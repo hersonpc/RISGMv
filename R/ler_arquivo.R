@@ -1,13 +1,13 @@
-#' Le um arquivo e obtem seu conteudo
+#' Ler um arquivo e obtem seu conteudo
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @param filename Caminho do arquivo a ser lido
 #' @return Conteudo do arquivo
 #' @export
 ler_arquivo <- function(filename) {
 
 	if(!file.exists(filename))
-		stop(paste0("Arquivo SQL não encontrado: ", filename))
+		stop(paste0("SQL file not found: ", filename))
 
 	# Lendo o arquivo...
 	con <- file(filename, "r")
@@ -26,7 +26,7 @@ ler_arquivo <- function(filename) {
 		texto <- paste(texto, line)
 	}
 	close(con)
-	
-	
-	return (texto) 
+
+
+	return (texto)
 }

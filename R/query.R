@@ -1,7 +1,6 @@
 #' Executar Query no banco de dados MV
 #'
-#' Exibe a mensagem de ola mundo
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @param sql Query SQL a ser executada ex: 'select * from tabela'
 #' @param replacement Array with replecements c('find this' = 'replace with this')
 #' @param connection_alias Alias para acesso a conexao armazenada
@@ -33,5 +32,5 @@ query <- function(sql, replacement = NULL, connection_alias = "default") {
 		}
 	)
 
-	return (dplyr::tbl_df(output))
+	return (dplyr::as_tibble(output))
 }

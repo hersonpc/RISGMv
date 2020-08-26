@@ -1,8 +1,12 @@
 #' Write data frames in database as a table
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
+#' @param df Tabela de dados
 #' @param table_name Table name in database
 #' @param delete_table_if_exists If TRUE and table exists in database, it will be deleted
+#' @param append Append parameter for dbWriteTable
+#' @param overwrite Overwrite parameter for dbWriteTable
+#' @param row.names Row.names parameter for dbWriteTable
 #' @param conexao_name Alias name for connection stored in local machine
 #' @return TRUE or FALSE if table has created
 #' @export

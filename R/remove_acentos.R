@@ -12,7 +12,7 @@
 #' @export
 remove_acentos <- function(str, pattern = "all") {
   # SOURCE :: https://pt.stackoverflow.com/questions/46473/remover-acentos
-  
+
   # Rotinas e funções úteis V 1.0
   # rm.accent - REMOVE ACENTOS DE PALAVRAS
   # Função que tira todos os acentos e pontuações de um vetor de strings.
@@ -24,12 +24,12 @@ remove_acentos <- function(str, pattern = "all") {
   #            Outras palavras aceitas: "all" (retira todos os acentos, que são "´", "`", "^", "~", "¨", "ç")
   if(!is.character(str))
     str <- as.character(str)
-  
+
   pattern <- unique(pattern)
-  
+
   if(any(pattern=="Ç"))
     pattern[pattern=="Ç"] <- "ç"
-  
+
   symbols <- c(
     acute = "áéíóúÁÉÍÓÚýÝ",
     grave = "àèìòùÀÈÌÒÙ",
@@ -38,7 +38,7 @@ remove_acentos <- function(str, pattern = "all") {
     umlaut = "äëïöüÄËÏÖÜÿ",
     cedil = "çÇ"
   )
-  
+
   nudeSymbols <- c(
     acute = "aeiouAEIOUyY",
     grave = "aeiouAEIOU",
@@ -47,14 +47,14 @@ remove_acentos <- function(str, pattern = "all") {
     umlaut = "aeiouAEIOUy",
     cedil = "cC"
   )
-  
+
   accentTypes <- c("´","`","^","~","¨","ç")
-  
+
   if(any(c("all","al","a","todos","t","to","tod","todo")%in%pattern)) # opcao retirar todos
     return(chartr(paste(symbols, collapse=""), paste(nudeSymbols, collapse=""), str))
-  
+
   for(i in which(accentTypes%in%pattern))
     str <- chartr(symbols[i], nudeSymbols[i], str)
-  
+
   return(str)
 }

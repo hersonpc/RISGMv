@@ -1,6 +1,6 @@
 #' Execute query in database
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @param sql Query SQL to be executed: 'INSERT INTO cars (speed, dist) VALUES (1, 1), (2, 2), (3, 3);'
 #' @param replacement Array with replecements c('find this' = 'replace with this')
 #' @param connection_alias Alias para acesso a conexao armazenada

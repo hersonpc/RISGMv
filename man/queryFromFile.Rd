@@ -4,12 +4,14 @@
 \alias{queryFromFile}
 \title{Executar Query armazeanda em um arquivo no banco de dados MV}
 \usage{
-queryFromFile(sql_filename, conexao_name = "default")
+queryFromFile(fileName, replacement = NULL, connection_alias = "default")
 }
 \arguments{
-\item{sql_filename}{Caminho do arquivo contento a query SQL a ser executada}
+\item{fileName}{Caminho do arquivo contento a query SQL a ser executada}
 
-\item{conexao_name}{Alias para acesso a conexao armazenada}
+\item{replacement}{Array with replecements c('find this' = 'replace with this')}
+
+\item{connection_alias}{Alias para acesso a conexao armazenada}
 }
 \value{
 Query executada no banco de dados
@@ -18,5 +20,5 @@ Query executada no banco de dados
 Executar Query armazeanda em um arquivo no banco de dados MV
 }
 \author{
-Herson Melo <hersonpc@gmail.com>
+Herson Melo
 }

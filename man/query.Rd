@@ -4,19 +4,21 @@
 \alias{query}
 \title{Executar Query no banco de dados MV}
 \usage{
-query(sql, conexao_name = "default")
+query(sql, replacement = NULL, connection_alias = "default")
 }
 \arguments{
 \item{sql}{Query SQL a ser executada ex: 'select * from tabela'}
 
-\item{conexao_name}{Alias para acesso a conexao armazenada}
+\item{replacement}{Array with replecements c('find this' = 'replace with this')}
+
+\item{connection_alias}{Alias para acesso a conexao armazenada}
 }
 \value{
 Query executada no banco de dados
 }
 \description{
-Exibe a mensagem de ola mundo
+Executar Query no banco de dados MV
 }
 \author{
-Herson Melo <hersonpc@gmail.com>
+Herson Melo
 }

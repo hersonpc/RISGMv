@@ -1,3 +1,8 @@
+#' Inicializa um setup para o ambiente Oracle
+#'
+#' @author Herson Melo
+#' @details Inicializa um setup para o ambiente Oracle
+#' @examples setup_ambiente_oracle()
 setup_ambiente_oracle <- function() {
 
   if(Sys.getenv("HOME") == "")
@@ -14,7 +19,7 @@ setup_ambiente_oracle <- function() {
 	dir.create(dirname(ojdbc6.filename), recursive = T, showWarnings = FALSE)
 
 	if(!file.exists(ojdbc6.filename)) {
-		download.file(url = ojdbc6.url,
+		utils::download.file(url = ojdbc6.url,
 					  destfile = ojdbc6.filename,
 					  method = "auto",
 					  quiet = FALSE,

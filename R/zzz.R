@@ -1,6 +1,6 @@
 .onAttach <- function(libname, pkgname) {
   # to show a startup message
-  packageStartupMessage("RISGMv 0.0.2 by Herson Melo <hersonpc@gmail.com>")
+  packageStartupMessage("RISGMv 0.0.3 by Herson Melo <hersonpc@gmail.com>")
   init_constantes()
 }
 

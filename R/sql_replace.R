@@ -1,6 +1,6 @@
 #' Get Script Query stored
 #'
-#' @author Herson Melo <hersonpc@gmail.com>
+#' @author Herson Melo
 #' @param text Original text
 #' @param replacement Array with replecements c('find this' = 'replace with this')
 #' @return Replaced text

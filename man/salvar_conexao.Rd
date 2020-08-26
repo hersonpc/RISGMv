@@ -4,18 +4,27 @@
 \alias{salvar_conexao}
 \title{Armazenada/Atualiza dados de uma conexao de banco de dados}
 \usage{
-salvar_conexao(name = "default", ip, database, username, password)
+salvar_conexao(
+  name = "default",
+  ip,
+  database,
+  username,
+  password,
+  db_type = "oracle"
+)
 }
 \arguments{
 \item{name}{Nome da conexao salva (ex: 'default')}
 
-\item{ip}{EndereÃ§o do serviÃ§or de banco de dados}
+\item{ip}{Endereço do serviçor de banco de dados}
 
-\item{database}{Nome da instÃ¢ncia do banco de dados}
+\item{database}{Nome da instância do banco de dados}
 
-\item{username}{Nome do usuÃ¡rio do banco de dados}
+\item{username}{Nome do usuário do banco de dados}
 
 \item{password}{Senha de acesso ao banco de dados}
+
+\item{db_type}{Determina o tipo de conexao ("oracle", "mysql")}
 }
 \value{
 TRUE ou FALSE, a depender do sucesso do armazenamento dos dados no dispositivo local.
@@ -28,8 +37,9 @@ salvar_conexao(name = "default",
 			ip = "192.168.0.1",
 			database = "producao",
 			username = "dbamv",
-			password = "123456")
+			password = "123456",
+			db_type = "oracle")
 }
 \author{
-Herson Melo <hersonpc@gmail.com>
+Herson Melo
 }
